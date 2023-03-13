@@ -11,7 +11,7 @@ import datetime
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from typing import Iterator, Optional
-from weibo_base import exist_get_uid, \
+from utiles.weibo_base import exist_get_uid, \
     get_tweet_containerid, weibo_tweets, weibo_getIndex, UserMeta, WeiboTweetParser, WeiboGetIndexParser
 
 try:

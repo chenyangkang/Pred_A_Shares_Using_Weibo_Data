@@ -8,19 +8,19 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 
 
-from weibo_scraper import get_weibo_profile
-import weibo_scraper
+from utiles.weibo_scraper import get_weibo_profile
+import utiles.weibo_scraper
 # weibo_profile = get_weibo_profile(name='天津股侠',)
 from tqdm import tqdm
 import pickle
-from weibo_scraper import  get_formatted_weibo_tweets_by_name
+from utiles.weibo_scraper import  get_formatted_weibo_tweets_by_name
 from sentence_transformers import SentenceTransformer
 import os
-from  Ashare.Ashare import *
+from  utiles.Ashare.Ashare import *
 
 
-from Weibo_scrapper_utiles import get_influencer_list,get_data_by_usr_name
-from Sentence_embedding_utiles import get_date
+from utiles.Weibo_scrapper_utiles import get_influencer_list,get_data_by_usr_name
+from utiles.Sentence_embedding_utiles import get_date
 
 from sklearn.ensemble import RandomForestClassifier,RandomForestRegressor
 from xgboost import XGBRFClassifier, XGBRFRegressor
@@ -35,8 +35,8 @@ from sklearn.metrics import make_scorer
 
 
 class Wei_trade_model():
-    def __init__(self, stock_id, stock_name, classifier=RandomForestClassifier(random_state=42,oob_score=True), 
-                        regressor=RandomForestRegressor(random_state=42,oob_score=True), 
+    def __init__(self, stock_id, stock_name, classifier=XGBRFClassifier(random_state=42), 
+                        regressor=XGBRFRegressor(random_state=42), 
                         influencer_list=get_influencer_list()):
         self.influencer_list = influencer_list
         self.classifier = classifier

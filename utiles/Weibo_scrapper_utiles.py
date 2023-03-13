@@ -8,12 +8,12 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 
 
-from weibo_scraper import get_weibo_profile
-import weibo_scraper
+from utiles.weibo_scraper import get_weibo_profile
+import utiles.weibo_scraper
 # weibo_profile = get_weibo_profile(name='天津股侠',)
 from tqdm import tqdm
 import pickle
-from weibo_scraper import  get_formatted_weibo_tweets_by_name
+from utiles.weibo_scraper import  get_formatted_weibo_tweets_by_name
 
 import os
 
