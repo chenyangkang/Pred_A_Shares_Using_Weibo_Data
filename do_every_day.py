@@ -42,7 +42,7 @@ from utiles.Agent_utiles import Wei_trade_model
 
 def job():
     stock_codes_dict = get_stock_codes()
-    
+
     ## Predict today (Run every trading day morning ~8:30)
     ######### pred today
     pred_res = []
@@ -92,7 +92,7 @@ def job():
     pred_res['index1'] = 2/(1/minmax_scale(pred_res['pred_today_cls']) + 1/minmax_scale(pred_res['f1']))
     pred_res['index2'] = 2/(1/minmax_scale(pred_res['pred_today_reg']) + 1/minmax_scale(pred_res['spearmanr']))
     pred_res['index3'] = 2/(1/minmax_scale(pred_res['index1']) + 1/minmax_scale(pred_res['index2']))
-    pred_res['index4'] = 5/( 1/minmax_scale(pred_res['precision']) + 1/minmax_scale(pred_res['spearmanr'] + \
+    pred_res['index4'] = 4/( 1/minmax_scale(pred_res['precision']) + 1/minmax_scale(pred_res['spearmanr'] + \
                                 1/(pred_res['pred_today_cls']) + 1/(pred_res['pred_today_reg'])))
 
     ### save today result
@@ -117,7 +117,7 @@ def job():
 # schedule.every(10).seconds.do(job)
 # schedule.every(10).minutes.do(job)
 # schedule.every().hour.do(job)
-schedule.every().day.at("20:00").do(job)
+schedule.every().day.at("08:00").do(job)
 # schedule.every(5).to(10).minutes.do(job)
 # schedule.every().monday.do(job)
 # schedule.every().wednesday.at("13:15").do(job)
