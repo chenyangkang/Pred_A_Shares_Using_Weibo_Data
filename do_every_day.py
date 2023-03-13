@@ -93,7 +93,7 @@ def job():
     pred_res['index2'] = 2/(1/minmax_scale(pred_res['pred_today_reg']) + 1/minmax_scale(pred_res['spearmanr']))
     pred_res['index3'] = 2/(1/minmax_scale(pred_res['index1']) + 1/minmax_scale(pred_res['index2']))
     pred_res['index4'] = 4/( 1/minmax_scale(pred_res['precision']) + 1/minmax_scale(pred_res['spearmanr'] + \
-                                1/(pred_res['pred_today_cls']) + 1/(pred_res['pred_today_reg'])))
+                                1/(minmax_scale(pred_res['pred_today_cls'])) + 1/(minmax_scale(pred_res['pred_today_reg']))))
 
     ### save today result
     pred_res.to_csv(f'./Data_{str(datetime.date.today())}/today_pred.csv')
