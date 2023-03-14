@@ -8,4 +8,5 @@ A-share is one of the most irrational market, with “dare-to-die buyers” and 
 Ashare: request A-share daily data.
 weibo-scraper: scrapping historical and today's Weibo data.
 
-
+# Workflow:
+![](https://github.com/chenyangkang/Pred_A_Shares_Using_Weibo_Data/blob/main/Workflow.png)
