@@ -6,6 +6,7 @@ A-share is one of the most irrational market, with “dare-to-die buyers” and 
 
 # Important plug-in packages:
 Ashare: request A-share daily data.
+
 weibo-scraper: scrapping historical and today's Weibo data.
 
 # Workflow:
