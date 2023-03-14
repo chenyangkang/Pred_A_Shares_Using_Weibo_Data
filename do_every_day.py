@@ -53,10 +53,13 @@ def job():
             bot = pickle.load(open(f'./Trained_bot/{stock[0]}.pkl', 'rb'))
 
             ### pred today one model (one stock)
-            # if count==0:
-            #     bot.predict_today(force=True) #False
-            # else:
-            bot.predict_today(force=False) #False
+            datetime_today = datetime.date.today()
+            if not os.path.exists(f'./Data_{str(datetime_today)}/'):
+                os.mkdir(f'./Data_{str(datetime_today)}/')
+            while len(os.listdir(f'./Data_{str(datetime_today)}/')) < 20:
+                bot.predict_today(force=True) #False
+
+            bot.predict_today(force=False)
                 
             pred_res.append({
                 'stock_id':bot.stock_id, 
