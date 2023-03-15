@@ -11,6 +11,7 @@ weibo-scraper: scrapping historical and today's Weibo data.
 
 # Workflow:
 ![](https://github.com/chenyangkang/Pred_A_Shares_Using_Weibo_Data/blob/main/Workflow.jpg)
+![](https://github.com/chenyangkang/Pred_A_Shares_Using_Weibo_Data/blob/main/example_email.jpg)
 
 
 
